@@ -1,6 +1,10 @@
 package xyz.nokt.btf.playingwithmaps
 
 import android.annotation.SuppressLint
+import android.app.job.JobInfo
+import android.app.job.JobScheduler
+import android.app.job.JobService
+import android.content.ComponentName
 import android.content.Context
 import android.content.pm.PackageManager
 import android.graphics.Color
@@ -178,6 +182,19 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         //plotRoute()
     }
 
+    fun scheduleJob()
+    {
+        var scheduler:JobScheduler = this.getSystemService(Context.JOB_SCHEDULER_SERVICE) as JobScheduler
+        var jobInfo: JobInfo? = JobInfo.Builder(12, ComponentName(baseContext, MapsJob::class.java))
+            .setPeriodic(15*60*1000)
+            .setPersisted(true)
+            .build()
+
+        if (jobInfo != null) {
+            scheduler.schedule(jobInfo)
+        }
+
+    }
     var _location:Location?=null
     inner class MyLocationListener:LocationListener {
         constructor() {
