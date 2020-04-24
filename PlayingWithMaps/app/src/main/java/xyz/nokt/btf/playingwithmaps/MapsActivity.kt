@@ -5,6 +5,7 @@ import android.content.Context
 import android.content.pm.PackageManager
 import android.graphics.Color
 import android.location.*
+import android.os.AsyncTask
 import android.os.Build
 import android.os.Bundle
 import android.util.Log
@@ -29,6 +30,9 @@ import java.util.concurrent.TimeUnit
 class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
     private lateinit var mMap: GoogleMap
+    var mode:TravelMode = TravelMode.DRIVING
+    var startLoc = "Road C2 FHA, Nyanya-Karu, Abuja"
+    var destination = "Wuse Zone 2, Abuja"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -229,6 +233,21 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
         override fun onProviderDisabled(provider: String?) {
             //TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        }
+
+    }
+
+    inner class Mapstask: AsyncTask<Void, Void, DirectionsResult>()
+    {
+        override fun doInBackground(vararg params: Void?): DirectionsResult {
+            //TODO("Not yet implemented")
+            var dateTime = DateTime()
+            return DirectionsApi.newRequest(getGeoContext())
+                .mode(mode)
+                .origin(startLoc)
+                .destination(destination)
+                .departureTime(dateTime)
+                .await()
         }
 
     }
