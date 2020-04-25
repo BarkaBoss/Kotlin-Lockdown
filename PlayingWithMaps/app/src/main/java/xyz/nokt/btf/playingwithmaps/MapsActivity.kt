@@ -47,6 +47,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         mapFragment.getMapAsync(this)
 
         checkForPermission()
+        scheduleJob()
     }
 
     var LOCCODE = 232
