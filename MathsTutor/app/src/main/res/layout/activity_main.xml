@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="30dp"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/btnAdd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:text="Addition"
+        android:textColor="@color/colorTxt"
+        android:background="@drawable/add_btn"
+        android:onClick="choiceClicked"
+        />
+    <Button
+        android:id="@+id/btnSub"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:textSize="18sp"
+        android:text="Subtraction"
+        android:textColor="@color/colorTxt"
+        android:background="@drawable/sub_btn"
+        android:onClick="choiceClicked"/>
+    <Button
+        android:id="@+id/btnMult"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:textSize="18sp"
+        android:text="Multiply"
+        android:textColor="@color/colorTxt"
+        android:background="@drawable/mul_btn"
+        android:onClick="choiceClicked"/>
+    <Button
+        android:id="@+id/btnDiv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:textSize="18sp"
+        android:text="Division"
+        android:textColor="@color/colorTxt"
+        android:background="@drawable/div_btn"
+        android:onClick="choiceClicked"/>
+
+</LinearLayout>
