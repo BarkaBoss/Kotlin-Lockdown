@@ -1,9 +1,105 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".MathActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/tvParamOne"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:background="@drawable/numbs_bg"
+            android:gravity="center"
+            android:textColor="@color/colorTxt"
+            android:textSize="50sp"
+            android:text="25"/>
+        <TextView
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:gravity="center"
+            android:textSize="40sp"
+            android:text="+"/>
+        <TextView
+            android:id="@+id/tvParamTwo"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:background="@drawable/numbs_bg"
+            android:gravity="center"
+            android:textColor="@color/colorTxt"
+            android:textSize="50sp"
+            android:text="25"/>
+    </LinearLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.cardview.widget.CardView
+            android:layout_margin="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:id="@+id/opOne"
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        android:background="@drawable/mul_btn"
+                        android:gravity="center"
+                        android:textColor="@color/colorTxt"
+                        android:textSize="50sp"
+                        android:layout_margin="10dp"
+                        android:text="25"/>
+                    <TextView
+                        android:id="@+id/opTwo"
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        android:background="@drawable/sub_btn"
+                        android:gravity="center"
+                        android:textColor="@color/colorTxt"
+                        android:textSize="50sp"
+                        android:layout_margin="10dp"
+                        android:text="25"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:id="@+id/opThree"
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        android:background="@drawable/div_btn"
+                        android:gravity="center"
+                        android:textColor="@color/colorTxt"
+                        android:textSize="50sp"
+                        android:layout_margin="10dp"
+                        android:text="25"/>
+                    <TextView
+                        android:id="@+id/opFour"
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        android:background="@drawable/add_btn"
+                        android:gravity="center"
+                        android:textColor="@color/colorTxt"
+                        android:textSize="50sp"
+                        android:layout_margin="10dp"
+                        android:text="25"/>
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+</LinearLayout>
