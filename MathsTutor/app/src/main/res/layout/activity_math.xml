@@ -5,23 +5,139 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:gravity="center"
     tools:context=".MathActivity">
+
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:padding="5dp"
+        android:orientation="horizontal">
+        <RadioGroup
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <RadioButton
+                android:id="@+id/rbRange1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:layout_marginLeft="3dp"
+                android:textSize="12sp"
+                android:buttonTint="@color/colorTxt"
+                android:background="@drawable/numb_range"
+                android:textColor="@color/colorTxt"
+                android:onClick="rangeSelected"
+                android:text="0-20"/>
+            <RadioButton
+                android:id="@+id/rbRange2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:buttonTint="@color/colorTxt"
+                android:layout_marginLeft="3dp"
+                android:textSize="12sp"
+                android:background="@drawable/numb_range"
+                android:textColor="@color/colorTxt"
+                android:onClick="rangeSelected"
+                android:text="20-40"/>
+            <RadioButton
+                android:id="@+id/rbRange3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:buttonTint="@color/colorTxt"
+                android:layout_marginLeft="3dp"
+                android:textSize="12sp"
+                android:background="@drawable/numb_range"
+                android:textColor="@color/colorTxt"
+                android:onClick="rangeSelected"
+                android:text="40-60"/>
+            <RadioButton
+                android:id="@+id/rbRange4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:buttonTint="@color/colorTxt"
+                android:layout_marginLeft="3dp"
+                android:textSize="12sp"
+                android:background="@drawable/numb_range"
+                android:textColor="@color/colorTxt"
+                android:onClick="rangeSelected"
+                android:text="60-80"/>
+            <RadioButton
+                android:id="@+id/rbRange5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:buttonTint="@color/colorTxt"
+                android:layout_marginLeft="3dp"
+                android:textSize="12sp"
+                android:background="@drawable/numb_range"
+                android:textColor="@color/colorTxt"
+                android:onClick="rangeSelected"
+                android:text="80-100"/>
+        </RadioGroup>
+        <!--TextView
+            android:id="@+id/tvRange1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="3dp"
+            android:padding="5dp"/>
+        <TextView
+            android:id="@+id/tvRange2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="3dp"
+            android:padding="5dp"
+            android:textSize="18sp"
+            android:textColor="@color/colorTxt"
+            android:background="@drawable/numb_range"
+            android:text="20-40"/>
+        <TextView
+            android:id="@+id/tvRange3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="3dp"
+            android:padding="5dp"
+            android:textSize="18sp"
+            android:textColor="@color/colorTxt"
+            android:background="@drawable/numb_range"
+            android:text="40-60"/>
+        <TextView
+            android:id="@+id/tvRange4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="3dp"
+            android:padding="5dp"
+            android:textSize="18sp"
+            android:textColor="@color/colorTxt"
+            android:background="@drawable/numb_range"
+            android:text="60-80"/>
+        <TextView
+            android:id="@+id/tvRange5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="3dp"
+            android:padding="5dp"
+            android:textSize="18sp"
+            android:textColor="@color/colorTxt"
+            android:background="@drawable/numb_range"
+            android:text="80-100"/-->
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="5dp"
-        android:gravity="center"
         android:orientation="horizontal">
         <TextView
             android:id="@+id/tvParamOne"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
             android:background="@drawable/numbs_bg"
             android:gravity="center"
             android:textColor="@color/colorTxt"
             android:textSize="50sp"
             android:text="25"/>
         <TextView
+            android:id="@+id/tvSymbol"
             android:layout_width="75dp"
             android:layout_height="75dp"
             android:gravity="center"
@@ -29,8 +145,8 @@
             android:text="+"/>
         <TextView
             android:id="@+id/tvParamTwo"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
             android:background="@drawable/numbs_bg"
             android:gravity="center"
             android:textColor="@color/colorTxt"
@@ -40,7 +156,8 @@
 
         <androidx.cardview.widget.CardView
             android:layout_margin="5dp"
-            android:layout_width="match_parent"
+            app:cardCornerRadius="20dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content">
             <LinearLayout
                 android:layout_width="match_parent"
@@ -61,6 +178,7 @@
                         android:textColor="@color/colorTxt"
                         android:textSize="50sp"
                         android:layout_margin="10dp"
+                        android:onClick="clickedOp"
                         android:text="25"/>
                     <TextView
                         android:id="@+id/opTwo"
@@ -71,6 +189,7 @@
                         android:textColor="@color/colorTxt"
                         android:textSize="50sp"
                         android:layout_margin="10dp"
+                        android:onClick="clickedOp"
                         android:text="25"/>
                 </LinearLayout>
                 <LinearLayout
@@ -88,6 +207,7 @@
                         android:textColor="@color/colorTxt"
                         android:textSize="50sp"
                         android:layout_margin="10dp"
+                        android:onClick="clickedOp"
                         android:text="25"/>
                     <TextView
                         android:id="@+id/opFour"
@@ -98,6 +218,7 @@
                         android:textColor="@color/colorTxt"
                         android:textSize="50sp"
                         android:layout_margin="10dp"
+                        android:onClick="clickedOp"
                         android:text="25"/>
                 </LinearLayout>
             </LinearLayout>
