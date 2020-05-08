@@ -95,38 +95,6 @@ class MathActivity : AppCompatActivity() {
         }
     }
 
-    /*fun rangeSelected(view: View)
-    {
-        //var radioButton = view as RadioButton
-        when {
-            rbRange1.isChecked -> {
-                minNumber = 0
-                maxNumber = 20
-
-                checkArithmeticChoice()
-            }
-            rbRange2.isChecked -> {
-                minNumber = 20
-                maxNumber = 40
-                checkArithmeticChoice()
-            }
-            rbRange3.isChecked -> {
-                minNumber = 40
-                maxNumber = 60
-                checkArithmeticChoice()
-            }
-            rbRange2.isChecked -> {
-                minNumber = 60
-                maxNumber = 80
-                checkArithmeticChoice()
-            }
-            rbRange3.isChecked -> {
-                minNumber = 80
-                maxNumber = 100
-                checkArithmeticChoice()
-            }
-        }
-    }*/
     private fun doDivision(minNumber:Int, maxNumber:Int)
     {
         var num2:Int = getRandomNumbRange(minNumber, maxNumber)
