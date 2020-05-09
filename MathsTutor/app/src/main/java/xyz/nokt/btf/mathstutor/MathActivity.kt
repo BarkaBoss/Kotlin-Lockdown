@@ -1,21 +1,19 @@
 package xyz.nokt.btf.mathstutor
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.View
-import android.widget.Button
-import android.widget.RadioButton
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_math.*
 import java.util.*
-import kotlin.math.min
 
 class MathActivity : AppCompatActivity() {
 
     var miniNumber:Int = 0
     var maxiNumber:Int = 20
+    var points:Int = 0
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_math)
@@ -278,6 +276,8 @@ class MathActivity : AppCompatActivity() {
                 opOne.id -> {
                     ans = tvParamOne.text.toString().toInt() + tvParamTwo.text.toString().toInt()
                     if (opOne.text.toString().toInt() == ans) {
+                        points += 1
+                        tvPoints.text = points.toString() +" Points"
                         Toast.makeText(this, "Correct", Toast.LENGTH_SHORT).show()
                     }else{
                         Toast.makeText(this, "Wrong", Toast.LENGTH_SHORT).show()
@@ -287,6 +287,8 @@ class MathActivity : AppCompatActivity() {
                 opTwo.id -> {
                     ans = tvParamOne.text.toString().toInt() + tvParamTwo.text.toString().toInt()
                     if (opTwo.text.toString().toInt() == ans) {
+                        points += 1
+                        tvPoints.text = points.toString()+" Points"
                         Toast.makeText(this, "Correct", Toast.LENGTH_SHORT).show()
                     }else{
                         Toast.makeText(this, "Wrong", Toast.LENGTH_SHORT).show()
@@ -296,6 +298,8 @@ class MathActivity : AppCompatActivity() {
                 opThree.id -> {
                     ans = tvParamOne.text.toString().toInt() + tvParamTwo.text.toString().toInt()
                     if (opThree.text.toString().toInt() == ans) {
+                        points += 1
+                        tvPoints.text = points.toString()+" Points"
                         Toast.makeText(this, "Correct", Toast.LENGTH_SHORT).show()
                     }else{
                         Toast.makeText(this, "Wrong", Toast.LENGTH_SHORT).show()
@@ -305,6 +309,8 @@ class MathActivity : AppCompatActivity() {
                 opFour.id -> {
                     ans = tvParamOne.text.toString().toInt() + tvParamTwo.text.toString().toInt()
                     if (opFour.text.toString().toInt() == ans) {
+                        points += 1
+                        tvPoints.text = points.toString()+" Points"
                         Toast.makeText(this, "Correct", Toast.LENGTH_SHORT).show()
                     }else{
                         Toast.makeText(this, "Wrong", Toast.LENGTH_SHORT).show()
@@ -320,6 +326,8 @@ class MathActivity : AppCompatActivity() {
                 opOne.id -> {
                     ans = tvParamOne.text.toString().toInt() - tvParamTwo.text.toString().toInt()
                     if (opOne.text.toString().toInt() == ans) {
+                        points += 1
+                        tvPoints.text = points.toString()+" Points"
                         Toast.makeText(this, "Correct", Toast.LENGTH_SHORT).show()
                     }else{
                         Toast.makeText(this, "Wrong", Toast.LENGTH_SHORT).show()
@@ -329,6 +337,8 @@ class MathActivity : AppCompatActivity() {
                 opTwo.id -> {
                     ans = tvParamOne.text.toString().toInt() - tvParamTwo.text.toString().toInt()
                     if (opTwo.text.toString().toInt() == ans) {
+                        points += 1
+                        tvPoints.text = points.toString()+" Points"
                         Toast.makeText(this, "Correct", Toast.LENGTH_SHORT).show()
                     }else{
                         Toast.makeText(this, "Wrong", Toast.LENGTH_SHORT).show()
@@ -338,6 +348,8 @@ class MathActivity : AppCompatActivity() {
                 opThree.id -> {
                     ans = tvParamOne.text.toString().toInt() - tvParamTwo.text.toString().toInt()
                     if (opThree.text.toString().toInt() == ans) {
+                        points += 1
+                        tvPoints.text = points.toString()+" Points"
                         Toast.makeText(this, "Correct", Toast.LENGTH_SHORT).show()
                     }else{
                         Toast.makeText(this, "Wrong", Toast.LENGTH_SHORT).show()
@@ -347,6 +359,8 @@ class MathActivity : AppCompatActivity() {
                 opFour.id -> {
                     ans = tvParamOne.text.toString().toInt() - tvParamTwo.text.toString().toInt()
                     if (opFour.text.toString().toInt() == ans) {
+                        points += 1
+                        tvPoints.text = points.toString()+" Points"
                         Toast.makeText(this, "Correct", Toast.LENGTH_SHORT).show()
                     }else{
                         Toast.makeText(this, "Wrong", Toast.LENGTH_SHORT).show()
@@ -360,6 +374,8 @@ class MathActivity : AppCompatActivity() {
                 opOne.id -> {
                     ans = tvParamOne.text.toString().toInt() * tvParamTwo.text.toString().toInt()
                     if (opOne.text.toString().toInt() == ans) {
+                        points += 1
+                        tvPoints.text = points.toString()+" Points"
                         Toast.makeText(this, "Correct", Toast.LENGTH_SHORT).show()
                     }else{
                         Toast.makeText(this, "Wrong", Toast.LENGTH_SHORT).show()
@@ -369,6 +385,8 @@ class MathActivity : AppCompatActivity() {
                 opTwo.id -> {
                     ans = tvParamOne.text.toString().toInt() * tvParamTwo.text.toString().toInt()
                     if (opTwo.text.toString().toInt() == ans) {
+                        points += 1
+                        tvPoints.text = points.toString()+" Points"
                         Toast.makeText(this, "Correct", Toast.LENGTH_SHORT).show()
                     }else{
                         Toast.makeText(this, "Wrong", Toast.LENGTH_SHORT).show()
@@ -378,6 +396,8 @@ class MathActivity : AppCompatActivity() {
                 opThree.id -> {
                     ans = tvParamOne.text.toString().toInt() * tvParamTwo.text.toString().toInt()
                     if (opThree.text.toString().toInt() == ans) {
+                        points += 1
+                        tvPoints.text = points.toString()+" Points"
                         Toast.makeText(this, "Correct", Toast.LENGTH_SHORT).show()
                     }else{
                         Toast.makeText(this, "Wrong", Toast.LENGTH_SHORT).show()
@@ -387,6 +407,8 @@ class MathActivity : AppCompatActivity() {
                 opFour.id -> {
                     ans = tvParamOne.text.toString().toInt() * tvParamTwo.text.toString().toInt()
                     if (opFour.text.toString().toInt() == ans) {
+                        points += 1
+                        tvPoints.text = points.toString()+" Points"
                         Toast.makeText(this, "Correct", Toast.LENGTH_SHORT).show()
                     }else{
                         Toast.makeText(this, "Wrong", Toast.LENGTH_SHORT).show()
@@ -399,7 +421,9 @@ class MathActivity : AppCompatActivity() {
             when (btnClicked.id) {
                 opOne.id -> {
                     ans = tvParamOne.text.toString().toInt() / tvParamTwo.text.toString().toInt()
-                    if (opOne.text.toString().toInt() == ans.toInt()) {
+                    if (opOne.text.toString().toInt() == ans) {
+                        points += 1
+                        tvPoints.text = points.toString()+" Points"
                         Toast.makeText(this, "Correct", Toast.LENGTH_SHORT).show()
                     }else{
                         Toast.makeText(this, "Wrong", Toast.LENGTH_SHORT).show()
@@ -409,6 +433,8 @@ class MathActivity : AppCompatActivity() {
                 opTwo.id -> {
                     ans = tvParamOne.text.toString().toInt() / tvParamTwo.text.toString().toInt()
                     if (opTwo.text.toString().toInt() == ans) {
+                        points += 1
+                        tvPoints.text = points.toString()+" Points"
                         Toast.makeText(this, "Correct", Toast.LENGTH_SHORT).show()
                     }else{
                         Toast.makeText(this, "Wrong", Toast.LENGTH_SHORT).show()
@@ -418,6 +444,8 @@ class MathActivity : AppCompatActivity() {
                 opThree.id -> {
                     ans = tvParamOne.text.toString().toInt() / tvParamTwo.text.toString().toInt()
                     if (opThree.text.toString().toInt() == ans) {
+                        points += 1
+                        tvPoints.text = points.toString()+" Points"
                         Toast.makeText(this, "Correct", Toast.LENGTH_SHORT).show()
                     }else{
                         Toast.makeText(this, "Wrong", Toast.LENGTH_SHORT).show()
@@ -427,6 +455,8 @@ class MathActivity : AppCompatActivity() {
                 opFour.id -> {
                     ans = tvParamOne.text.toString().toInt() / tvParamTwo.text.toString().toInt()
                     if (opFour.text.toString().toInt() == ans) {
+                        points += 1
+                        tvPoints.text = points.toString()+" Points"
                         Toast.makeText(this, "Correct", Toast.LENGTH_SHORT).show()
                     }else{
                         Toast.makeText(this, "Wrong", Toast.LENGTH_SHORT).show()

@@ -8,6 +8,13 @@
     android:gravity="center"
     tools:context=".MathActivity">
 
+    <TextView
+        android:id="@+id/tvPoints"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:textColor="@color/colorDiv"
+        android:text="0 points"/>
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -24,7 +31,7 @@
                 android:layout_height="wrap_content"
                 android:checked="true"
                 android:layout_marginLeft="3dp"
-                android:textSize="12sp"
+                android:textSize="10sp"
                 android:buttonTint="@color/colorTxt"
                 android:background="@drawable/numb_range"
                 android:textColor="@color/colorTxt"
@@ -36,7 +43,7 @@
                 android:layout_height="wrap_content"
                 android:buttonTint="@color/colorTxt"
                 android:layout_marginLeft="3dp"
-                android:textSize="12sp"
+                android:textSize="10sp"
                 android:background="@drawable/numb_range"
                 android:textColor="@color/colorTxt"
                 android:onClick="rangeSelected"
@@ -47,7 +54,7 @@
                 android:layout_height="wrap_content"
                 android:buttonTint="@color/colorTxt"
                 android:layout_marginLeft="3dp"
-                android:textSize="12sp"
+                android:textSize="10sp"
                 android:background="@drawable/numb_range"
                 android:textColor="@color/colorTxt"
                 android:onClick="rangeSelected"
@@ -58,7 +65,7 @@
                 android:layout_height="wrap_content"
                 android:buttonTint="@color/colorTxt"
                 android:layout_marginLeft="3dp"
-                android:textSize="12sp"
+                android:textSize="10sp"
                 android:background="@drawable/numb_range"
                 android:textColor="@color/colorTxt"
                 android:onClick="rangeSelected"
@@ -69,7 +76,7 @@
                 android:layout_height="wrap_content"
                 android:buttonTint="@color/colorTxt"
                 android:layout_marginLeft="3dp"
-                android:textSize="12sp"
+                android:textSize="10sp"
                 android:background="@drawable/numb_range"
                 android:textColor="@color/colorTxt"
                 android:onClick="rangeSelected"
@@ -129,8 +136,8 @@
         android:orientation="horizontal">
         <TextView
             android:id="@+id/tvParamOne"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
             android:background="@drawable/numbs_bg"
             android:gravity="center"
             android:textColor="@color/colorTxt"
@@ -145,8 +152,8 @@
             android:text="+"/>
         <TextView
             android:id="@+id/tvParamTwo"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
             android:background="@drawable/numbs_bg"
             android:gravity="center"
             android:textColor="@color/colorTxt"
@@ -154,73 +161,73 @@
             android:text="25"/>
     </LinearLayout>
 
-        <androidx.cardview.widget.CardView
-            android:layout_margin="5dp"
-            app:cardCornerRadius="20dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+    <androidx.cardview.widget.CardView
+        android:layout_margin="5dp"
+        app:cardCornerRadius="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:padding="5dp"
+                android:padding="5dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/opOne"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:background="@drawable/mul_btn"
                     android:gravity="center"
-                    android:orientation="horizontal">
-                    <TextView
-                        android:id="@+id/opOne"
-                        android:layout_width="150dp"
-                        android:layout_height="150dp"
-                        android:background="@drawable/mul_btn"
-                        android:gravity="center"
-                        android:textColor="@color/colorTxt"
-                        android:textSize="50sp"
-                        android:layout_margin="10dp"
-                        android:onClick="clickedOp"
-                        android:text="25"/>
-                    <TextView
-                        android:id="@+id/opTwo"
-                        android:layout_width="150dp"
-                        android:layout_height="150dp"
-                        android:background="@drawable/sub_btn"
-                        android:gravity="center"
-                        android:textColor="@color/colorTxt"
-                        android:textSize="50sp"
-                        android:layout_margin="10dp"
-                        android:onClick="clickedOp"
-                        android:text="25"/>
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:padding="5dp"
+                    android:textColor="@color/colorTxt"
+                    android:textSize="50sp"
+                    android:layout_margin="10dp"
+                    android:onClick="clickedOp"
+                    android:text="25"/>
+                <TextView
+                    android:id="@+id/opTwo"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:background="@drawable/sub_btn"
                     android:gravity="center"
-                    android:orientation="horizontal">
-                    <TextView
-                        android:id="@+id/opThree"
-                        android:layout_width="150dp"
-                        android:layout_height="150dp"
-                        android:background="@drawable/div_btn"
-                        android:gravity="center"
-                        android:textColor="@color/colorTxt"
-                        android:textSize="50sp"
-                        android:layout_margin="10dp"
-                        android:onClick="clickedOp"
-                        android:text="25"/>
-                    <TextView
-                        android:id="@+id/opFour"
-                        android:layout_width="150dp"
-                        android:layout_height="150dp"
-                        android:background="@drawable/add_btn"
-                        android:gravity="center"
-                        android:textColor="@color/colorTxt"
-                        android:textSize="50sp"
-                        android:layout_margin="10dp"
-                        android:onClick="clickedOp"
-                        android:text="25"/>
-                </LinearLayout>
+                    android:textColor="@color/colorTxt"
+                    android:textSize="50sp"
+                    android:layout_margin="10dp"
+                    android:onClick="clickedOp"
+                    android:text="25"/>
             </LinearLayout>
-        </androidx.cardview.widget.CardView>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/opThree"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:background="@drawable/div_btn"
+                    android:gravity="center"
+                    android:textColor="@color/colorTxt"
+                    android:textSize="50sp"
+                    android:layout_margin="10dp"
+                    android:onClick="clickedOp"
+                    android:text="25"/>
+                <TextView
+                    android:id="@+id/opFour"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:background="@drawable/add_btn"
+                    android:gravity="center"
+                    android:textColor="@color/colorTxt"
+                    android:textSize="50sp"
+                    android:layout_margin="10dp"
+                    android:onClick="clickedOp"
+                    android:text="25"/>
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
 </LinearLayout>
