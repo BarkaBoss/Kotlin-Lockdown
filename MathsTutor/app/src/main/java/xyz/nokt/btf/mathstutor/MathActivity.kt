@@ -1,12 +1,17 @@
 package xyz.nokt.btf.mathstutor
 
 import android.os.Bundle
+import android.os.CountDownTimer
+import android.view.LayoutInflater
 import android.view.View
+import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_math.*
 import java.util.*
+
 
 class MathActivity : AppCompatActivity() {
 
@@ -21,6 +26,19 @@ class MathActivity : AppCompatActivity() {
         checkArithmeticChoice(miniNumber, maxiNumber)
     }
 
+    private fun ticTok()
+    {
+        object : CountDownTimer(60000, 1000) {
+            override fun onTick(millisUntilFinished: Long) {
+                tvTime.text = "seconds remaining: " + millisUntilFinished / 1000
+            }
+
+            override fun onFinish() {
+                tvTime.text = "done!"
+                popDialog()
+            }
+        }.start()
+    }
     private fun checkArithmeticChoice(sNumb:Int, lNumb:Int)
     {
         if (intent.hasExtra(MainActivity.ADD))
@@ -28,14 +46,33 @@ class MathActivity : AppCompatActivity() {
             doAddition(sNumb, lNumb)
         }else if(intent.hasExtra(MainActivity.SUB)){
             doSubtraction(sNumb, lNumb)
-            //Toast.makeText(this, intent.getStringExtra(MainActivity.SUB), Toast.LENGTH_SHORT).show()
         }else if(intent.hasExtra(MainActivity.MUL)){
             doMultiplication(sNumb, lNumb)
-            //Toast.makeText(this, intent.getStringExtra(MainActivity.MUL), Toast.LENGTH_SHORT).show()
         }else if(intent.hasExtra(MainActivity.DIV)){
             doDivision(sNumb, lNumb)
-            //Toast.makeText(this, intent.getStringExtra(MainActivity.DIV), Toast.LENGTH_SHORT).show()
         }
+
+        //popDialog()
+        ticTok()
+    }
+
+    private fun popDialog()
+    {
+        val mDialog:AlertDialog.Builder = AlertDialog.Builder(this)
+        var layoutInflater:LayoutInflater = layoutInflater
+        val diagView:View = layoutInflater.inflate(R.layout.time_dialog, null)
+        mDialog.setView(diagView)
+
+        val ab:AlertDialog = mDialog.create()
+        var scoreTxt:TextView = diagView.findViewById(R.id.tvDiagScore)
+        var btnClose:Button = diagView.findViewById(R.id.btnClose)
+        scoreTxt.text = tvPoints.text
+
+        btnClose.setOnClickListener {
+            checkArithmeticChoice(miniNumber, maxiNumber)
+            ab.dismiss()
+        }
+        ab.show()
     }
 
     fun rangeSelected(view: View) {

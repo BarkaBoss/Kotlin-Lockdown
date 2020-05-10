@@ -7,14 +7,31 @@
     android:orientation="vertical"
     android:gravity="center"
     tools:context=".MathActivity">
-
-    <TextView
-        android:id="@+id/tvPoints"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="16sp"
-        android:textColor="@color/colorDiv"
-        android:text="0 points"/>
+        android:gravity="center"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/tvPoints"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textColor="@color/colorDiv"
+            android:drawableLeft="@drawable/ic_check"
+            android:drawablePadding="4dp"
+            android:text="0 points"/>
+        <TextView
+            android:id="@+id/tvTime"
+            android:paddingLeft="4dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textColor="@color/colorSub"
+            android:drawableLeft="@drawable/ic_watch"
+            android:drawablePadding="4dp"
+            android:text="0 Time Left"/>
+    </LinearLayout>
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
