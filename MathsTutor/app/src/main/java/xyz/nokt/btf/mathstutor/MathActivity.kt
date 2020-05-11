@@ -2,6 +2,7 @@ package xyz.nokt.btf.mathstutor
 
 import android.os.Bundle
 import android.os.CountDownTimer
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.Button
@@ -18,6 +19,7 @@ class MathActivity : AppCompatActivity() {
     var miniNumber:Int = 0
     var maxiNumber:Int = 20
     var points:Int = 0
+    var countDown:CountDownTimer? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,16 +30,23 @@ class MathActivity : AppCompatActivity() {
 
     private fun ticTok()
     {
-        object : CountDownTimer(60000, 1000) {
+        countDown = object : CountDownTimer(60000, 1000) {
             override fun onTick(millisUntilFinished: Long) {
                 tvTime.text = "seconds remaining: " + millisUntilFinished / 1000
             }
 
             override fun onFinish() {
                 tvTime.text = "done!"
+
                 popDialog()
             }
         }.start()
+        //countDown.cancel()
+    }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        countDown?.cancel()
     }
     private fun checkArithmeticChoice(sNumb:Int, lNumb:Int)
     {
@@ -52,8 +61,15 @@ class MathActivity : AppCompatActivity() {
             doDivision(sNumb, lNumb)
         }
 
+        Log.i("Timer", intent.hasExtra(MainActivity.TIMED).toString())
         //popDialog()
-        ticTok()
+        if (intent.hasExtra(MainActivity.TIMED)) {
+            Toast.makeText(this, intent.hasExtra(MainActivity.TIMED).toString(), Toast.LENGTH_SHORT).show()
+            ticTok()
+        }
+        else{
+            countDown?.cancel()
+        }
     }
 
     private fun popDialog()

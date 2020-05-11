@@ -18,6 +18,7 @@ class MainActivity : AppCompatActivity() {
         val SUB:String = "xyz.nokt.btf.mathstutor.SUB"
         val MUL:String = "xyz.nokt.btf.mathstutor.MUL"
         val DIV:String = "xyz.nokt.btf.mathstutor.DIV"
+        val TIMED:String = "xyz.nokt.btf.mathstutor.TIMED"
     }
 
 
@@ -36,6 +37,10 @@ class MainActivity : AppCompatActivity() {
         {
             btnAdd.id->{
                 Log.i(CH_TAG, "Addition")
+                if(chTimed.isChecked)
+                {
+                    intent.putExtra(TIMED, "timed")
+                }
                 intent.putExtra(ADD,"add")
                 setResult(RESULT_CODE, intent)
                 startActivity(intent)
